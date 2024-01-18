@@ -7,7 +7,7 @@ app.use(cors());
 
 app.get('/api/breachedaccount/:email', (req, res) => {
   const email = req.params.email;
-  const API_KEY = 'MaCléPourAPI';
+  const API_KEY = process.env.API_KEY;
 
   fetch(`https://haveibeenpwned.com/api/v3/breachedaccount/${encodeURIComponent(email)}`, {
     headers: { 'hibp-api-key': API_KEY }
